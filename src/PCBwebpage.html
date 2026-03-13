@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCB · Personal Computer Builder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="#" onclick="switchView('home'); return false;" class="logo">PCB</a>
+        <div class="nav-links">
+            <a href="#" onclick="switchView('home'); return false;" id="nav-home" class="nav-link active">Home</a>
+            <a href="#" onclick="switchView('builder'); return false;" id="nav-builder" class="nav-link">Builder</a>
+            <a href="#" onclick="switchView('guides'); return false;" id="nav-guides" class="nav-link">Guides</a>
+        </div>
+        <div class="nav-auth">
+            <a href="#">Sign In</a>
+            <a href="#" class="btn-signup">Sign Up</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- HOME VIEW -->
+    <section id="view-home" class="view active">
+        <div class="container">
+            <!-- Hero -->
+            <div class="hero grid-2">
+                <div>
+                    <h1>Build Your Dream PC</h1>
+                    <p class="lead">PCB simplifies the process of building your custom computer. Find compatible parts, stay within budget, and create the perfect machine.</p>
+                    <div class="btn-group">
+                        <a href="#" onclick="switchView('builder'); return false;" class="btn btn-primary">Start Building Now</a>
+                        <a href="#" onclick="switchView('guides'); return false;" class="btn btn-secondary">View Build Guides</a>
+                    </div>
+                    <p class="small">Free to use • No account required • Real-time compatibility checking</p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1620050506248-fbdd178e38ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnYW1pbmclMjBQQyUyMFJHQiUyMGJ1aWxkfGVufDF8fHx8MTc3MjcxNzQ0NHww&ixlib=rb-4.1.0&q=80&w=800" alt="Gaming PC">
+                </div>
+            </div>
+
+            <!-- Features -->
+            <div class="features">
+                <h2>Features</h2>
+                <p class="subtitle">Everything you need to build your perfect PC, all in one place.</p>
+                <div class="grid-3">
+                    <div class="feature-item">
+                        <h3>Compatibility Check</h3>
+                        <p>Automatically verify that all your selected components work together perfectly. No more compatibility issues or returns.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Smart Recommendations</h3>
+                        <p>Get intelligent part suggestions based on your performance needs, budget, and use case. Build smarter, not harder.</p>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Budget Optimizer</h3>
+                        <p>Maximize performance within your budget. See real-time price comparisons and get the best value for your money.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Real-Time Database -->
+            <div class="database grid-2">
+                <div>
+                    <h2>Real-Time Part Database</h2>
+                    <p>Access our constantly updated database of thousands of PC components. Compare specs, prices, and reviews all in one place.</p>
+                    <ul>
+                        <li>Updated daily with the latest components and prices</li>
+                        <li>Detailed specifications and performance benchmarks</li>
+                        <li>Price tracking and alerts for your selected parts</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1758159234965-9d259875cf35?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMGhhcmR3YXJlJTIwbW90aGVyYm9hcmQlMjBjb21wb25lbnRzfGVufDF8fHx8MTc3MjcxNzQ0M3ww&ixlib=rb-4.1.0&q=80&w=800" alt="Motherboard components">
+                </div>
+            </div>
+
+            <!-- About / Mission -->
+            <div class="about grid-2">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1738245494097-9b1e3971c3eb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjdXN0b20lMjBkZXNrdG9wJTIwY29tcHV0ZXIlMjBzZXR1cHxlbnwxfHx8fDE3NzI3MTc0NDR8MA&ixlib=rb-4.1.0&q=80&w=800" alt="Custom desktop setup">
+                </div>
+                <div>
+                    <h2>About PCB</h2>
+                    <p>Personal Computer Builder was created to democratize PC building. Whether you're a first-time builder or a seasoned enthusiast, we believe everyone deserves the tools to create their dream machine.</p>
+                    <div class="mission-box">
+                        <h3>Our Mission</h3>
+                        <p class="quote">"To empower everyone to create their dream machines"</p>
+                        <p>We understand that building a PC can be overwhelming. With thousands of components to choose from and complex compatibility requirements, it's easy to make costly mistakes. PCB eliminates the guesswork and anxiety, guiding you through every step of the process.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="cta">
+                <h3>Ready to Start Building?</h3>
+                <p>Start your build today and create your dream computer.</p>
+                <a href="#" onclick="switchView('builder'); return false;" class="btn btn-primary btn-large">Start Building Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUILD GUIDES VIEW (refined) -->
+    <section id="view-guides" class="view">
+        <div class="container">
+            <h1>How to Build a PC: Step‑by‑Step Guide</h1>
+            <p class="subtitle">Follow this detailed, beginner‑friendly guide to assemble your own computer safely and correctly.</p>
+
+            <!-- Before You Start -->
+            <div class="guide-step prep-step">
+                <div class="step-header">
+                    <span class="step-number">0</span>
+                    <h2>Before You Start</h2>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <h3>📦 What You'll Need</h3>
+                        <ul class="checklist">
+                            <li><strong>Components:</strong> CPU, motherboard, RAM, GPU, storage, PSU, case, cooler</li>
+                            <li><strong>Tools:</strong> Phillips #2 screwdriver (magnetic tip helps)</li>
+                            <li><strong>Optional but recommended:</strong> Anti‑static wrist strap, cable ties, thermal paste (if not pre‑applied)</li>
+                            <li><strong>Workspace:</strong> Clean, flat surface with good lighting</li>
+                        </ul>
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <p><strong>Pro Tip:</strong> Touch a metal part of your case before handling components to discharge static. Better yet, use an anti‑static wrist strap.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="PC tools and components laid out">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 1 -->
+            <div class="guide-step">
+                <div class="step-header">
+                    <span class="step-number">1</span>
+                    <h2>Install the CPU</h2>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <p>The CPU is the brain of your computer. Handle it carefully – avoid touching the gold pins or contacts.</p>
+                        <ol>
+                            <li>Open the CPU socket lever on the motherboard.</li>
+                            <li>Align the small triangle on the CPU corner with the triangle on the socket.</li>
+                            <li>Gently lower the CPU into place – it should drop in with zero force.</li>
+                            <li>Close the lever to secure the CPU.</li>
+                        </ol>
+                        <div class="warning-box">
+                            <span class="warning-icon">⚠️</span>
+                            <p><strong>Never force the CPU.</strong> If it doesn't sit perfectly, check alignment again.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Installing CPU into socket">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="guide-step">
+                <div class="step-header">
+                    <span class="step-number">2</span>
+                    <h2>Install RAM (Memory)</h2>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <p>RAM provides temporary storage for running programs. Install it in the correct slots for best performance.</p>
+                        <ol>
+                            <li>Open the clips on the RAM slots.</li>
+                            <li>Align the notch in the RAM stick with the slot's key.</li>
+                            <li>Press firmly and evenly until the clips snap into place. You should hear a click.</li>
+                            <li>For dual‑channel, use slots 2 and 4 (or 1 and 3) – check your motherboard manual.</li>
+                        </ol>
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <p><strong>Pro Tip:</strong> If you have only one stick, use the slot labeled “DIMM_A2” or second from the CPU.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Installing RAM">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="guide-step">
+                <div class="step-header">
+                    <span class="step-number">3</span>
+                    <h2>Install the M.2 SSD (Storage)</h2>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <p>Modern SSDs are tiny and install directly on the motherboard.</p>
+                        <ol>
+                            <li>Locate the M.2 slot (usually under a heatsink on newer boards).</li>
+                            <li>Remove the screw from the standoff.</li>
+                            <li>Insert the SSD at a 30‑degree angle, then press it flat and secure with the screw.</li>
+                            <li>If you're using a 2.5” SATA drive, mount it in the drive cage later.</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <img src="https://media.istockphoto.com/id/1410783528/photo/ssd-m2-disk-close-up-on-dark-background.jpg?s=612x612&w=0&k=20&c=grOX3cAVHnC3ZuIiegMxUYf664ZiDsX2g_zMz5aJ8xo=" alt="M.2 SSD installation">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="guide-step">
+                <div class="step-header">
+                    <span class="step-number">4</span>
+                    <h2>Install the CPU Cooler</h2>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <p>Keep your CPU cool for stable performance and longevity.</p>
+                        <ol>
+                            <li>If your cooler requires a backplate, install it behind the motherboard.</li>
+                            <li>Apply a pea‑sized dot of thermal paste if not pre‑applied.</li>
+                            <li>Mount the cooler according to its manual – usually with screws or a clip mechanism.</li>
+                            <li>Connect the fan cable to the <code>CPU_FAN</code> header on the motherboard.</li>
+                        </ol>
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <p><strong>Pro Tip:</strong> Don't overdo thermal paste – a small dot in the center spreads perfectly when the cooler is tightened.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/033/945/855/small_2x/computer-fan-modern-powerful-cooler-for-cooling-the-cpu-photo.jpg" alt="CPU cooler installation">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="guide-step">
+                <div class="step-header">
+                    <span class="step-number">5</span>
+                    <h2>Prepare the Case & Install Motherboard</h2>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <p>Now it's time to move everything into the case.</p>
+                        <ol>
+                            <li>Install the I/O shield (the metal plate with cutouts) into the case from the inside.</li>
+                            <li>Screw in standoffs that match your motherboard's mounting holes.</li>
+                            <li>Carefully lower the motherboard into place, aligning with the I/O shield.</li>
+                            <li>Secure with the provided screws. Don't overtighten.</li>
+                            <li>Connect the front panel cables (power switch, reset, LEDs) – consult your motherboard manual for the exact pins.</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <img src="https://thumbs.dreamstime.com/b/closeup-technician-installing-motherboard-inside-computer-case-modern-lab-symbolizing-innovation-hardware-repair-418965817.jpg" alt="Motherboard installation in case">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 6 -->
+            <div class="guide-step">
+                <div class="step-header">
+                    <span class="step-number">6</span>
+                    <h2>Install the Power Supply (PSU)</h2>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <p>The PSU delivers power to every component.</p>
+                        <ol>
+                            <li>Mount the PSU in its designated spot – usually bottom or top of the case, fan facing outward.</li>
+                            <li>Route necessary cables through the back of the case for a clean look.</li>
+                            <li>Connect the main 24‑pin motherboard cable, the CPU power (4+4 pin), and later the GPU cables.</li>
+                        </ol>
+                        <div class="warning-box">
+                            <span class="warning-icon">⚠️</span>
+                            <p><strong>Use only the cables that came with your PSU.</strong> Mixing modular cables can damage components.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Power supply installation">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 7 -->
+            <div class="guide-step">
+                <div class="step-header">
+                    <span class="step-number">7</span>
+                    <h2>Install the Graphics Card (GPU)</h2>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <p>The GPU handles all visuals – essential for gaming and creative work.</p>
+                        <ol>
+                            <li>Remove the PCIe slot covers on the back of the case where the GPU ports will stick out.</li>
+                            <li>Open the PCIe latch on the motherboard.</li>
+                            <li>Insert the GPU into the top PCIe x16 slot until you hear a click.</li>
+                            <li>Secure it with screws to the case.</li>
+                            <li>Connect the required power cables from the PSU (6+2 pin connectors).</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <img src="https://images.pexels.com/photos/34552794/pexels-photo-34552794/free-photo-of-close-up-of-geforce-rtx-gpu-with-led-lighting.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="GPU installation">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 8 -->
+            <div class="guide-step">
+                <div class="step-header">
+                    <span class="step-number">8</span>
+                    <h2>Connect Storage Drives (2.5” / 3.5”)</h2>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <p>If you have additional SATA SSDs or hard drives, install them now.</p>
+                        <ol>
+                            <li>Mount drives in the drive cage or designated slots using screws or tool‑less brackets.</li>
+                            <li>Connect a SATA data cable from the drive to the motherboard.</li>
+                            <li>Connect a SATA power cable from the PSU to the drive.</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <img src="https://grundigit.com/wp-content/uploads/2020/01/bigstock-Background-from-different-data-349253947.jpg" alt="SATA drive installation">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 9 -->
+            <div class="guide-step">
+                <div class="step-header">
+                    <span class="step-number">9</span>
+                    <h2>Cable Management & Final Checks</h2>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <p>Tidy cables improve airflow and make the build look professional.</p>
+                        <ol>
+                            <li>Use zip ties or velcro straps to bundle cables neatly behind the motherboard tray.</li>
+                            <li>Ensure no cables are touching fan blades or blocking airflow.</li>
+                            <li>Double‑check all connections: 24‑pin, CPU power, GPU power, front panel headers, fan cables.</li>
+                            <li>Close both side panels.</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <img src="https://i.redd.it/jiw9gvxm77p41.png" alt="Cable management">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 10 -->
+            <div class="guide-step">
+                <div class="step-header">
+                    <span class="step-number">10</span>
+                    <h2>First Boot & BIOS Setup</h2>
+                </div>
+                <div class="grid-2">
+                    <div>
+                        <p>The moment of truth – power on your new machine.</p>
+                        <ol>
+                            <li>Connect your monitor, keyboard, and mouse.</li>
+                            <li>Flip the PSU switch to “on”.</li>
+                            <li>Press the case power button.</li>
+                            <li>If it boots, enter BIOS (usually by pressing Del or F2) to check temperatures and boot order.</li>
+                            <li>Install your operating system via USB drive.</li>
+                        </ol>
+                        <div class="tip-box">
+                            <span class="tip-icon">💡</span>
+                            <p><strong>Pro Tip:</strong> If nothing happens, check the front panel connectors and ensure the PSU is switched on. Don't panic – most issues are simple cable mistakes.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://i.pinimg.com/564x/f0/b8/39/f0b839bdde11df1032e0475d21cdecae.jpg" alt="BIOS screen">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Final words -->
+            <div class="guide-step" style="border-top: none; text-align: center;">
+                <p class="lead" style="max-width: 800px; margin: 2rem auto;">Congratulations! You've built your own PC. Enjoy the satisfaction and performance of a custom machine.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BUILDER VIEW -->
+    <section id="view-builder" class="view">
+        <div class="container">
+            <h1>Build Your PC</h1>
+            <p class="subtitle">Select components below. The list updates automatically and compatibility is checked.</p>
+
+            <div class="builder-grid">
+                <!-- CPU -->
+                <div class="part-card">
+                    <label>CPU</label>
+                    <label for="cpu-select"></label><select id="cpu-select" onchange="updateBuild()">
+                        <option value="0">-- Select CPU --</option>
+                    </select>
+                    <span class="price" id="cpu-price"></span>
+                </div>
+                <!-- Motherboard -->
+                <div class="part-card">
+                    <label>Motherboard</label>
+                    <label for="motherboard-select"></label><select id="motherboard-select" onchange="updateBuild()">
+                        <option value="0">-- Select Motherboard --</option>
+                    </select>
+                    <span class="price" id="motherboard-price"></span>
+                </div>
+                <!-- RAM -->
+                <div class="part-card">
+                    <label>RAM</label>
+                    <label for="ram-select"></label><select id="ram-select" onchange="updateBuild()">
+                        <option value="0">-- Select RAM --</option>
+                    </select>
+                    <span class="price" id="ram-price"></span>
+                </div>
+                <!-- GPU -->
+                <div class="part-card">
+                    <label>Graphics Card</label>
+                    <label for="gpu-select"></label><select id="gpu-select" onchange="updateBuild()">
+                        <option value="0">-- Select GPU --</option>
+                    </select>
+                    <span class="price" id="gpu-price"></span>
+                </div>
+                <!-- Storage -->
+                <div class="part-card">
+                    <label>Storage</label>
+                    <label for="storage-select"></label><select id="storage-select" onchange="updateBuild()">
+                        <option value="0">-- Select Storage --</option>
+                    </select>
+                    <span class="price" id="storage-price"></span>
+                </div>
+                <!-- PSU -->
+                <div class="part-card">
+                    <label>Power Supply</label>
+                    <label for="psu-select"></label><select id="psu-select" onchange="updateBuild()">
+                        <option value="0">-- Select PSU --</option>
+                    </select>
+                    <span class="price" id="psu-price"></span>
+                </div>
+                <!-- Case -->
+                <div class="part-card">
+                    <label>Case</label>
+                    <label for="case-select"></label><select id="case-select" onchange="updateBuild()">
+                        <option value="0">-- Select Case --</option>
+                    </select>
+                    <span class="price" id="case-price"></span>
+                </div>
+                <!-- Cooler -->
+                <div class="part-card">
+                    <label>CPU Cooler</label>
+                    <label for="cooler-select"></label><select id="cooler-select" onchange="updateBuild()">
+                        <option value="0">-- Select Cooler --</option>
+                    </select>
+                    <span class="price" id="cooler-price"></span>
+                </div>
+            </div>
+
+            <!-- Build Summary -->
+            <div class="summary">
+                <h2>Build Summary</h2>
+                <div id="summary-list" class="summary-list"></div>
+                <div class="total"><span>Total:</span> <span id="total-price">$0</span></div>
+                <div id="compatibility-warning" class="warning"></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer id="global-footer" class="footer">
+    <div class="container">
+        <p>© 2026 Personal Computer Builder. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#" onclick="switchView('builder'); return false;">Builder</a>
+            <a href="#" onclick="switchView('guides'); return false;">Guides</a>
+            <a href="#">Privacy</a>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
